@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Alopex Demo - Used Cars</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+
+	<!-- alopexui_theme dark -->
+	<link rel="stylesheet" href="//ui.alopex.io/dist/css/alopex-ui-dark.css">
+	<!-- end alopexui_theme -->
+		
+	<!-- alopexui_basic -->
+	<link rel="stylesheet" href="//ui.alopex.io/dist/css/src/alopex-ext.css">
+    <script src="//ui.alopex.io/js/libs/jquery/jquery-1.12.4.min.js"></script>
+    <script src="//ui.alopex.io/dist/script/alopex-ui-trial.min.js"></script>
+    <script src="//ui.alopex.io/dist/script/src/alopex-ext.min.js"></script>
+    <script src="//ui.alopex.io/dist/script/src/alopex-ext-setup.js"></script>
+
+
+    <!-- AlopexGrid 정식/Trial 버전이 아닌 경우 로컬호스트 테스트가 제한됩니다. -->
+    <!-- AlopexGrid 홈페이지(grid.alopex.io)에서 정식/Trial 버전을 요청하실 수 있습니다. -->
+    <link rel="stylesheet" href="//grid.alopex.io/dist/css/alopex-grid.css" />
+    <script src="//grid.alopex.io/dist/script/alopex-grid-trial.min.js"></script>
+	<!-- end alopexui_basic -->
+
+	<script src="/asset/demo/demo-common/script/app/common/demo-util.js"></script>
+	<script src="/asset/demo/demo-common/script/app/common/alopex-ui-common.js"></script>
+	<script src="/asset/demo/demo-common/script/app/common/alopex-grid-common.js"></script>
+	<script src="/asset/demo/demo-common/script/app/common/demo-common.js"></script>
+	<script src="../script/libs/defiant/defiant.min.js"></script>
+	<script src="../script/app/biz/demo-admin-login.js"></script>
+</head>
+<body>
+	<div class="Grid-wrapper">
+		<!-- menu header -->
+		<div class="Grid-sm-12 Bg-primary" id="divTopMenu"></div>
+		<!-- //menu header -->
+		<!-- header search -->
+		<!-- //header search -->
+		<!-- contents -->
+		<div class="Grid-sm-12 Text-center">
+			<div class="Margin-auto Margin-top-40 ">
+				<h3 class="Header-4 Text-center" id="h3NewPromotion">ALOPEXAUTO 관리자 로그인</h3>
+				<div class="Text-center Font-small">( Test ID / PW : admin / 11111 )</div>
+				<br>
+				<br><br>
+				<form id="getDataForm" class="getDataForm" method="post" onsubmit="return false;" name="getDataForm" >
+				<div class="Margin-auto Clearfix Text-center Width-30">
+					<input id="textId" type="text" class="Textinput  Width-100"  data-validation-rule="{required:true, minlength:2, maxlength:10}"  placeholder="아이디를 입력해주세요.">
+					<div class="Tooltip" id="tooltip1" data-tooltip-trigger="blur" data-for="textId"  data-position="right"></div>
+					<p>
+
+					<input id="textPwd" type="password" class="Textinput  Width-100"  data-validation-rule="{required:true, minlength:2, maxlength:10}" placeholder="패스워드를 입력해주세요.">
+					<div class="Tooltip"  id="tooltip2"  data-tooltip-trigger="blur" data-for="textPwd" data-position="right"></div><p>
+
+					<button class="Button Extra Width-100 af-hover" id="btnLogin" data-type="button" data-classinit="true" type="botton" data-converted="true">Login</button><p>
+				<div>
+				<div class="Margin-auto Clearfix Text-left">
+					<label class="ImageCheckbox"><input class="Checkbox" type="checkbox" id="saveId" name="saveId" value="Y" data-type="checkbox">&nbsp;&nbsp;아이디/비밀번호 기억하기</label>
+				</div>
+				<form>
+			</div>
+
+
+		</div>
+		</div>
+		<!-- //contents -->
+		<!-- footer -->
+		<div class="Grid-sm-12 Margin-top-80 Bg-primary">
+			<div class="Padding-top-20 Padding-bottom-20 Text-center Color-white Font-small">
+				All pictures are taken from Flickr under creative common. if you keep them, please keep the credit.<br>
+				Copyright © 2018 SK Holdings C&C. All rights reserved.
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>
