@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dateinput</title>
+</head>
+<body>
+    <div class="Dateinput" data-block-key="true" data-click-select="true" data-inputwidth="200" data-maxdate="2021-12-30">
+        <input id="dateinput01">
+    </div>
+    <div id="date2" class="Dateinput">
+        <input type="" id="dateinput19">
+    </div>
+    <button class="Button" id="btn_clear">clear()</button>
+    <script>
+        $("#btn_clear").on("click", function(){
+            $('#date2').clear();
+        });
+    </script>
+
+    <div>
+        <input type="" id="result_show" class="Textinput">
+        <input type="button" value="Show DatePicker" id="showdp" class="Button">
+        <input type="button" value="Close DatePicker" id="closedp" class="Button">
+    </div>
+    <script>
+        $('#showdp').on('click', function(){
+            $('#showdp').showDatePicker(function(date, dateStr){
+                //set selected date to text input
+                $("#result_show").val(dateStr);
+            });
+        });
+        $('#closedp').on('click', function(){
+            $("#result_show").closeDatePicker();
+        });
+    </script>
+
+    <input type="text" id="result2" class="Textinput">
+    <input type="button" value="년 월 셀렉트" id="btn_yearmonth" class="Button">
+    <script>
+        $('#btn_yearmonth').on('click', function(){
+            $('#btn_yearmonth').showDatePicker(function(date, dateStr){
+                $("#result2").val(dateStr);
+            }, {selectyear: true, selectmonth: true});
+        });
+    </script>
+
+    <button class="Button" id="button1">show Monthly picker</button>
+    <input type="text" id="input1" class="Textinput">
+    <script>
+        $('#button1').on('click', function(){
+            #('#button1').showDatePicker(function(date, dateStr){
+                $("#input1").val(dateStr);
+            }, {
+                pickertype:'monthly',
+                format: 'yyyy-MM'
+            });
+        });
+    </script>
+
+    <div id="datepickerArea" class="Diplay-inblock"></div>
+    <div class="Display-inblock Valign-top Padding-left-10">
+        <label for="">Result :: <input type="text" id="result_inlineDP" class="Textinput"></label>
+    </div>
+    <script>
+        var inlineOption = {
+            inline : true
+        };
+        $('#datepickerArea').showDatePicker(onInlineDatePicked, inlineOption);
+        function onInlineDatePicked(date, dateStr){
+            $('#result_inlineDP').val(dateStr);
+        }
+    </script>
+
+    <select name="" id="locale" class="Select">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+        <option value="ja">일본어</option>
+        <option value="zh">중국어</option>
+    </select>
+    <button id="btn_locale" class="Button">Show DatePicker</button>
+    <label for="">Redult <input type="text" id="result_locale" class="Textinput"></label>
+    <script>
+        $('#btn_locale').bind('click', function(){
+            var localeValue = $('#locale > option:selected').val();
+            var option = {
+                locale : localeValue
+            };
+            $('#btn_locale').showDatePicker(onLacaleDatePicked, option);
+        });
+        function onLocaleDatePicked(date, dateStr){
+            $('#result_locale').val(dateStr);
+        }
+    </script>
+
+</body>
+</html>

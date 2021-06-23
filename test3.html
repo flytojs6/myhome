@@ -20,5 +20,21 @@
     <button class="Button" id="btn_setVal">setValue("value3")</button>
     <button class="Button" id="btn_setTxt">setText("Japan")</button>
 
+<script>
+    $('#btn_getVal').on("click", function(e){
+        alert("getValue :"+ $('#getValTxt').getValue());
+    });
+    $('#btn_getTxt').on("click", function(e){
+        alert("getText :"+ $('#getValTxt').getText());
+    });
+    $('#btn_setVal').on("click", function(e){
+        alert("setValue('value3')");
+        $('#getValTxt').setValue("value3");
+    });
+    $('#btn_setTxt').on("click", function(e){
+        alert("setText('Japan')");
+        $('#getValTxt').setText("Japan");
+    });
+</script>    
 </body>
 </html>

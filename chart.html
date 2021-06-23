@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart</title>
+</head>
+<body>
+
+<div id="chartdiv"></div>
+<script>
+    var chart = Amcharts.makeChart("chartdiv", {
+        "type": "serial",
+        "theme": "light",
+        "marginRight": 70,
+        "dataProvider": [{
+            "contry": "USA",
+            "visits": 3025,
+            "color": "#ff0f00"
+        }, {
+            "contry": "China",
+            "visits": 1882,
+            "color": "#ff6600"
+        }, {
+            "country": "Japan",
+            "visits": 1809,
+            "color": "#ff0e01"
+        }],
+        "startDuration": 0,
+        "graphs": [ {
+            "balloonText": "<b>[[category]]: [[value]]</b>",
+            "fillColorsField": "color",
+            "fillAlphas": 0.9,
+            "lineAlpha": 0.2,
+            "type": "column",
+            "valueField": "visits"
+        }],
+        "chartCusor": {
+            "categoryBalloonEnabled": false,
+            "cursorAlpha": 0,
+            "zoomable": false
+        },
+        "categoryField": "country",
+        "categoryAxis": {
+            "gridPosition": "start",
+            "labelRotation": 45
+        },
+        "export": {
+            "enabled": true
+        }
+    });
+</script>
+
+<script>
+    var chart = AmCharts.makeChart("chartdiv", {
+        //
+        "chartCursor": {
+            "oneBalloonOnly": true
+        }
+    })
+</script>
+
+<script>
+    var chart = AmCharts.makeChart("chartdiv", {
+        //
+        "graphs": [ {
+            "id": "AmGraph-1",
+            "title": "Column graph",
+            "type": "column-1",
+            "fillAlphas": 1
+        }]
+    });
+</script>
+
+    <div id="chartdiv_export" style="height:300px"></div>
+    <script>
+        var chart_export = AmCharts.makeChart("chartdiv_export", {
+            "type": "serial",
+            "theme": "light",
+            "dataProvider": [ {
+                "country": "USA",
+                "visits": 2025
+            },{
+                "country": "China",
+                "visits": 1882
+            },{
+                "country": "Brizil",
+                "visits": 395
+            }],
+            "valueAxes": [{
+                "gridColor": "#ffffff",
+                "gridAlpha": 0.2,
+                "dashLength": 0
+            }],
+            "gridAboveGraphs": true,
+            "starDuration": 0,
+            "graphs": [ {
+                "balloonText": "[[category]]: <b>[[value]]</b>",
+                "fillAlphas": 0.8,
+                "lineAlpha": 0.2,
+                "type": "column",
+                "valueField": "visits"
+            }],
+            "chartCursor": {
+                "categoryBalloonEnabled": false,
+                "cursorAlpha": 0,
+                "zoomable": false
+            },
+            "categoryField": "country",
+            "categoryAxis": {
+                "gridPosition": "start",
+                "gridAlpha": 0,
+                "tickPosition": "start",
+                "tickLength": 20
+            },
+            "export": {
+                "enable": true
+            }
+        });
+    </script>
+
+    <div id="chartdiv"></div>
+    <script>
+        var chart = AmCharts.makeChart("chartdiv",{
+            "type": "gauge",
+            "arrows": [ {
+                "value": 130
+            }],
+            "titles": [ {
+                "text": "Speedometer",
+                "size": 15
+            }],
+            "axes": [ {
+                "bottomText": "0 km/h",
+                "endValue": 220,
+                "valueInterval": 10,
+                "band": [ {
+                    "color": "#00cc00",
+                    "endValue": 90,
+                    "startValue": 0
+                },{
+                    "color": "#ffac29",
+                    "endValue": 130,
+                    "startValue": 90
+                },{
+                    "color": "#ea3838",
+                    "endValue": 220,
+                    "startValue": 130,
+                    "innerRadius": "95%"
+                }]
+            }]
+        });
+    </script>
+
+    <div class="Carousel" data-autoSlidemode="true" data-autoSlideDuration="5000">
+        <div class="Scroller">
+            <div class="Page">
+                <p>Creative ICT Factory</p>
+                <p>With superior technological prowess and industry insight</p>
+            </div>
+            <div class="Page">
+                <p>IT Sector Activities</p>
+                <p>Website Construction for Non-Profit Organizations</p>
+            </div>
+            <div class="Page">
+                <p>Age Group-Based IT Education</p>
+                <p>we are offering customized IT education programs</p>
+            </div>
+        </div>
+        <a href="" class="Prev"></a>
+        <a href="" class="Next"></a>
+        <div class="Paging Mobile">
+            <a href="" class="Link">1</a>
+            <a href="" class="Link">2</a>
+            <a href="" class="Link">3</a>
+        </div>
+    </div>
+
+<script>
+    var e = jQuery.Event("keydown", {keyCode: 64} );
+    jQuery("body").trigger(e);
+</script>
+
+<script>
+    var e = jQuery.Event("click");
+    jQuery("body").trigger(e);
+</script>
+
+</body>
+</html>
